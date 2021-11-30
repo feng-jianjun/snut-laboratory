@@ -7,5 +7,5 @@ package org.snut.utils;
  **/
 public class EnumUtils {
 
-    
+
 }
