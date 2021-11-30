@@ -34,8 +34,33 @@ public class GenericTest {
 
         while (iterator.hasNext()) {
             Map.Entry<String, GenericClass> next = iterator.next();
-            System.out.println(next.getKey() +"==="+ next.getValue().toString());
+            System.out.println(next.getKey() + "===" + next.getValue().toString());
         }
 
+        System.out.println("===================");
+
+        ArrayList<Employee> list = new ArrayList<>();
+
+        list.add(new Employee("张三", "司机", new MyDate("1990", "02", "27")));
+        list.add(new Employee("李四", "老师", new MyDate("1982", "10", "15")));
+        list.add(new Employee("张三", "厨师", new MyDate("1993", "07", "02")));
+
+        System.out.println("==========排序前=========");
+        System.out.println(list);
+        System.out.println("==========排序后=========");
+        list.sort(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                if (o1 instanceof Employee && o2 instanceof Employee) {
+                    int nCompare = o1.getName().compareTo(o2.getName());
+                    if (nCompare == 0) {
+                        return o1.getBirthday().toString().compareTo(o2.getBirthday().toString());
+                    }
+                    return nCompare;
+                }
+                return 0;
+            }
+        });
+        System.out.println(list);
     }
 }
