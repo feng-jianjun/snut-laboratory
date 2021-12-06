@@ -7,5 +7,9 @@ package org.snut.utils;
  **/
 public class EnumUtils {
 
+    public <T extends Enum> String getValue(T t) {
 
+        return "s";
+
+    }
 }
