@@ -1,5 +1,7 @@
 package org.snut.generic;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.*;
 
 /**
@@ -62,5 +64,10 @@ public class GenericTest {
             }
         });
         System.out.println(list);
+    }
+
+    @Test
+    public void test1(){
+        System.out.println("XSXS");
     }
 }
